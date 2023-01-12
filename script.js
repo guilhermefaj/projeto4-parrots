@@ -15,8 +15,15 @@ const listaCartas = [];
 inserirCartas();
 
 function inserirCartas() {
-    const listaCartas = document.querySelector("ul");
+    const todasCartas = document.querySelectorAll("li");
+    console.log(todasCartas);
+
+    let contador = 0;
+
+    while (qtdCartas > listaCartas.length) {
+        listaCartas.push(todasCartas[contador]);
+        contador++;
+    }
+
     console.log(listaCartas);
 }
-
-console.log(document.querySelectorAll("li"));

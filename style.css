@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
-*{
-    box-sizing: border-box;
-    font-family: 'Roboto';
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto';
 }
 
 li {
   list-style-type: none;
 }
 
-body{
-    background-color: #eef9bf;
+body {
+  background-color: #eef9bf;
 }
 
 .container {
@@ -20,40 +20,41 @@ body{
   align-items: center;
 }
 
-h1{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding-top: 40px;
-    padding-bottom: 47px;
-    font-family: 'Roboto';
-    color: #75b79e;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 56px;
-    line-height: 66px;
-    letter-spacing: -0.004em;
+h1 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 47px;
+  font-family: 'Roboto';
+  color: #75b79e;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 66px;
+  letter-spacing: -0.004em;
 }
 
-.container-cartas{
+.container-cartas {
   display: flex;
   justify-content: center;
   max-width: 1139px;
   gap: 34px;
   flex-wrap: wrap;
 }
+
 .card {
-    width: 117px;
-    height: 146px;
-    position: relative;
-  }
+  width: 117px;
+  height: 146px;
+  position: relative;
+}
 
 .face {
   width: 100%;
   height: 100%;
   background-color: #A7E9AF;
   border-radius: 10px;
-  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -85,13 +86,19 @@ h1{
   transform: rotateY(-180deg);
 }
 
+.escondida {
+  display: none;
+}
 
+.selecionada {
+  display: initial;
+}
 
 @media (max-width:335px) {
 
   .container h1 {
-  font-size: 36px;
-  line-height: 42px;
-}
+    font-size: 36px;
+    line-height: 42px;
+  }
 
 }

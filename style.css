@@ -1,6 +1,29 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #eef9bf;
+}
+.container {
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 47px;
+    font-family: 'Roboto';
+    color: #75b79e;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 66px;
+    letter-spacing: -0.004em;
+}
+
 .card {
-    width: 200px;
-    height: 250px;
+    width: 117px;
+    height: 146px;
     position: relative;
   }
 
@@ -19,8 +42,18 @@
     transform-style: preserve-3d;
   }
 
+  .front-face img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+
   .back-face {
     transform: rotateY(180deg);
+  }
+
+  .back-face img {
+    min-width: 100px;
+    min-height: 100px;
   }
 
   .card:hover .back-face {

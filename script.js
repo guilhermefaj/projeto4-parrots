@@ -1,3 +1,5 @@
+//Prompt para solicitar a quantidade de cartas que serão usadas
+
 const qtdCartas = contarCartas()
 
 function contarCartas() {
@@ -10,8 +12,9 @@ function contarCartas() {
     return qtdCartas;
 }
 
-const listaCartas = [];
+//Insere a quantidade de cartas desejada em uma lista
 
+const listaCartas = [];
 inserirCartas();
 
 function inserirCartas() {
@@ -21,9 +24,11 @@ function inserirCartas() {
     let contador = 0;
 
     while (qtdCartas > listaCartas.length) {
-        listaCartas.push(todasCartas[contador]);
+        listaCartas.push(todasCartas[contador].classList.remove("escondida"));
+
         contador++;
     }
 
     console.log(listaCartas);
 }
+

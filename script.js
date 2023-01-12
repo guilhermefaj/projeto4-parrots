@@ -14,17 +14,19 @@ function contarCartas() {
 
 //Insere a quantidade de cartas desejada em uma lista
 
-const listaCartas = [];
+let listaCartas = [];
+let todasCartas = []
 inserirCartas();
 
 function inserirCartas() {
-    const todasCartas = document.querySelectorAll("li");
+    todasCartas = document.querySelectorAll("li");
     console.log(todasCartas);
 
     let contador = 0;
 
     while (qtdCartas > listaCartas.length) {
-        listaCartas.push(todasCartas[contador].classList.remove("escondida"));
+        listaCartas.push(todasCartas[contador]);
+        listaCartas[contador].classList.remove("escondida")
 
         contador++;
     }
@@ -32,3 +34,8 @@ function inserirCartas() {
     console.log(listaCartas);
 }
 
+listaCartas.sort(comparador);
+
+function comparador() {
+    return Math.random() - 0.5;
+}

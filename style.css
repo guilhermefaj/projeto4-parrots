@@ -90,10 +90,6 @@ h1 {
   display: none;
 }
 
-.selecionada {
-  display: initial;
-}
-
 @media (max-width:335px) {
 
   .container h1 {

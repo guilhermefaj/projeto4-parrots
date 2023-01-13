@@ -1,6 +1,18 @@
+
+
+const listaTodasCartas = [
+    "bobrossparrot.gif",
+    "explodyparrot.gif",
+    "fiestaparrot.gif",
+    "metalparrot.gif",
+    "revertitparrot.gif",
+    "tripletsparrot.gif",
+    "unicornparrot.gif"
+]
+
 //Prompt para solicitar a quantidade de cartas que serão usadas
 
-const qtdCartas = contarCartas()
+const qtdCartas = contarCartas();
 
 function contarCartas() {
 
@@ -12,9 +24,48 @@ function contarCartas() {
     return qtdCartas;
 }
 
+//Adiciona a quantidade de cartas selecionadas na tela
+
+var listaCartasSelecionadas = [];
+
+adicionarCartas();
+
+function adicionarCartas() {
+
+    const ul = document.querySelector("ul");
+
+    for (i = 0; i < qtdCartas / 2; i++) {
+
+        listaCartasSelecionadas.push(listaTodasCartas[i], listaTodasCartas[i]);
+
+        listaCartasSelecionadas.sort(comparador);
+
+        function comparador() {
+            return Math.random() - 0.5;
+        }
+
+
+    }
+
+    for (i = 0; i < qtdCartas; i++) {
+        ul.innerHTML += `
+        <li>
+        <div class="card">
+          <div class="front-face face">
+            <img src="imagens/back.png">
+          </div>
+          <div class="back-face face">
+            <img src="imagens/${listaCartasSelecionadas[i]}">
+          </div>
+        </div>
+      </li>
+        `;
+    }
+}
+
 //Insere a quantidade de cartas desejada em uma lista
 
-let listaCartas = [];
+/*let listaCartas = [];
 let todasCartas = []
 inserirCartas();
 
@@ -39,3 +90,4 @@ listaCartas.sort(comparador);
 function comparador() {
     return Math.random() - 0.5;
 }
+*/

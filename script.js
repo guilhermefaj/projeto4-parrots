@@ -48,12 +48,12 @@ function adicionarCartas() {
     for (i = 0; i < qtdCartas; i++) {
         ul.innerHTML += `
         <li>
-        <div class="card card${[i]}" onclick="virarCartas(this)">
+        <div data-test="card" class="card card${[i]}" onclick="virarCartas(this)">
           <div class="front-face face">
-            <img src="imagens/back.png">
+            <img data-test="face-down-image" src="imagens/back.png">
           </div>
           <div class="back-face face">
-            <img src="imagens/${listaCartasSelecionadas[i]}">
+            <img data-test="face-up-image" src="imagens/${listaCartasSelecionadas[i]}">
           </div>
         </div>
       </li>

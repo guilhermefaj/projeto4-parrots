@@ -78,6 +78,13 @@ h1 {
   min-height: 100px;
 }
 
+.virar {
+  transition: all 1s ease;
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
+}
+
+/*
 .card:hover .back-face {
   transform: rotateY(0deg);
 }
@@ -89,6 +96,7 @@ h1 {
 .escondida {
   display: none;
 }
+*/
 
 @media (max-width:335px) {
 

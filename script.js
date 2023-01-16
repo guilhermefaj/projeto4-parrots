@@ -24,7 +24,7 @@ function contarCartas() {
     return qtdCartas;
 }
 
-//Adiciona a quantidade de cartas selecionadas na tela
+//Adiciona a quantidade de cartas selecionadas na tela e embaralha
 
 var listaCartasSelecionadas = [];
 
@@ -43,14 +43,12 @@ function adicionarCartas() {
         function comparador() {
             return Math.random() - 0.5;
         }
-
-
     }
 
     for (i = 0; i < qtdCartas; i++) {
         ul.innerHTML += `
         <li>
-        <div class="card">
+        <div class="card ${[i]}" onclick="virarCartas(this)">
           <div class="front-face face">
             <img src="imagens/back.png">
           </div>
@@ -63,31 +61,12 @@ function adicionarCartas() {
     }
 }
 
-//Insere a quantidade de cartas desejada em uma lista
+//Vira e mantém viradas as cartas selecionadas
 
-/*let listaCartas = [];
-let todasCartas = []
-inserirCartas();
+let turn;
 
-function inserirCartas() {
-    todasCartas = document.querySelectorAll("li");
-    console.log(todasCartas);
+function virarCartas(carta) {
+    console.log(carta);
 
-    let contador = 0;
-
-    while (qtdCartas > listaCartas.length) {
-        listaCartas.push(todasCartas[contador]);
-        listaCartas[contador].classList.remove("escondida")
-
-        contador++;
-    }
-
-    console.log(listaCartas);
+    carta.classList.toggle("virar");
 }
-
-listaCartas.sort(comparador);
-
-function comparador() {
-    return Math.random() - 0.5;
-}
-*/

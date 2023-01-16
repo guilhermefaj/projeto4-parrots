@@ -48,7 +48,7 @@ function adicionarCartas() {
     for (i = 0; i < qtdCartas; i++) {
         ul.innerHTML += `
         <li>
-        <div class="card ${[i]}" onclick="virarCartas(this)">
+        <div class="card card${[i]}" onclick="virarCartas(this)">
           <div class="front-face face">
             <img src="imagens/back.png">
           </div>
@@ -63,10 +63,62 @@ function adicionarCartas() {
 
 //Vira e mantém viradas as cartas selecionadas
 
-let turn;
+function travarVirada() {
+}
+
+
+function desvirarCarta(carta) {
+    carta.classList.remove('virar');
+    carta.classList.toggle('desvirar');
+    console.log('Deu certo');
+}
+
+
+let turn1;
+let turn2;
+let indice = 0
+mylist = [];
+
+contador = 0;
 
 function virarCartas(carta) {
-    console.log(carta);
 
-    carta.classList.toggle("virar");
+    contador++;
+
+    let acertouCarta = false;
+
+    console.log(carta);
+    mylist.push(carta);
+
+    if (carta.classList.contains('desvirar')) {
+        carta.classList.remove('desvirar');
+    }
+
+    carta.classList.add('virar');
+    indice++;
+
+    console.log(mylist);
+
+    if (turn1 === undefined) {
+        turn1 = carta.innerHTML;
+    } else if (turn1 !== undefined && turn2 === undefined) {
+        turn2 = carta.innerHTML;
+        if (turn1 === turn2) {
+            acertouCarta = true;
+            travarVirada();
+        } else {
+            mylist.forEach(element => {
+                setTimeout(() => { desvirarCarta(element) }, 1000);
+            });
+
+        }
+        if (mylist.length === 2) {
+            mylist = [];
+            turn1 = undefined;
+            turn2 = undefined;
+        } if (document.querySelectorAll('.virar').length === qtdCartas) {
+            alert("você ganhou em " + contador + " jogadas!");
+        }
+    }
+
 }

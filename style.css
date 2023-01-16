@@ -82,6 +82,13 @@ h1 {
   transition: all 1s ease;
   transform-style: preserve-3d;
   transform: rotateY(180deg);
+  pointer-events: none;
+}
+
+.desvirar {
+  transition: all 1s ease;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
 }
 
 /*

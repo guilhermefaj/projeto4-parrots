@@ -91,25 +91,10 @@ h1 {
   transform: rotateY(0deg);
 }
 
-/*
-.card:hover .back-face {
-  transform: rotateY(0deg);
-}
-
-.card:hover .front-face {
-  transform: rotateY(-180deg);
-}
-
-.escondida {
-  display: none;
-}
-*/
-
 @media (max-width:335px) {
 
   .container h1 {
     font-size: 36px;
     line-height: 42px;
   }
-
 }

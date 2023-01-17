@@ -1,5 +1,3 @@
-
-
 const listaTodasCartas = [
     "bobrossparrot.gif",
     "explodyparrot.gif",
@@ -66,13 +64,10 @@ function adicionarCartas() {
 function travarVirada() {
 }
 
-
 function desvirarCarta(carta) {
     carta.classList.remove('virar');
     carta.classList.toggle('desvirar');
-    console.log('Deu certo');
 }
-
 
 let turn1;
 let turn2;
@@ -87,7 +82,6 @@ function virarCartas(carta) {
 
     let acertouCarta = false;
 
-    console.log(carta);
     mylist.push(carta);
 
     if (carta.classList.contains('desvirar')) {
@@ -96,8 +90,6 @@ function virarCartas(carta) {
 
     carta.classList.add('virar');
     indice++;
-
-    console.log(mylist);
 
     if (turn1 === undefined) {
         turn1 = carta.innerHTML;
@@ -117,7 +109,12 @@ function virarCartas(carta) {
             turn1 = undefined;
             turn2 = undefined;
         } if (document.querySelectorAll('.virar').length === qtdCartas) {
-            alert("você ganhou em " + contador + " jogadas!");
+            function alerta() {
+                alert("você ganhou em " + contador + " jogadas!")
+            }
+            setTimeout(() => {
+                alerta()
+            }, 1000);
         }
     }
 
